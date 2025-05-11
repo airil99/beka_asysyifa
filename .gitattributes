@@ -5,7 +5,8 @@
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
-
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+public/video/video3.mp4 filter=lfs diff=lfs merge=lfs -text
+public/video/video4.mp4 filter=lfs diff=lfs merge=lfs -text

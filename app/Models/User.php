@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+
+    // Enable timestamps for the model
+    public $timestamps = true; // This line enables the automatic handling of created_at and updated_at timestamps
 
     /**
      * The attributes that are mass assignable.
@@ -20,8 +21,15 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
+        'role',
+        'gender',  // Add gender
+        'dob',     // Add dob
+        'address', // Add address
     ];
+    
+    
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,3 +54,4 @@ class User extends Authenticatable
         ];
     }
 }
+
