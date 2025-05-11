@@ -3,7 +3,7 @@
 @section('content')
 <div class="main-top">
     <h2>Payment Details</h2>
-    <p>Review your appointments and total amount before proceeding to payment.</p>
+    <p>Review your appointment and total amount before proceeding to payment.</p>
 </div>
 
 {{-- Success/Error Messages --}}
