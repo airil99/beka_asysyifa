@@ -47,10 +47,12 @@
         }
 
         .container {
-            display: flex;
-            width: 1200px;
-            margin: auto;
-        }
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
 
         nav {
             position: sticky;
@@ -192,7 +194,22 @@
                     <h1>Bekam Asy Syifa</h1>
                 </div>
                 <ul>
-                    <li><a href="#" onclick="reloadPage()"><i class="fas fa-home"></i><span class="nav-item">Dashboard</span></a></li>
+                <li>
+  <a href="#" onclick="event.preventDefault(); loadPage(
+    @if(Auth::user()->role === 'manager')
+      '{{ route('manager.dashboard') }}'
+    @elseif(Auth::user()->role === 'staff')
+      '{{ route('staff.dashboard') }}'
+    @elseif(Auth::user()->role === 'customer')
+      '{{ route('customer.dashboard') }}'
+    @endif
+  )">
+    <i class="fas fa-home"></i><span class="nav-item">Dashboard</span>
+  </a>
+</li>
+
+
+
 
                     @if(Auth::user()->role === 'manager')
                         <li><a href="#" onclick="loadPage('{{ route('manager.profile') }}')"><i class="fas fa-user-cog"></i><span class="nav-item">Profile</span></a></li>

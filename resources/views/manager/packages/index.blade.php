@@ -62,13 +62,14 @@
 <style>
 /* resources/css/index.css */
 .sales-container {
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 25px;
-        background: #fdfdfd;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    margin: 30px auto;
+    max-width: 900px;
+    background-color: whitesmoke; /* Baby Blue */
+    border: 2px solid #90CAF9; 
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
     }
 /* General body styling */
 body {

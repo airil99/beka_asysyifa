@@ -7,6 +7,10 @@ use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\Consultation;
 use Carbon\Carbon;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use App\Models\Package;
+
 
 class DashboardController extends Controller
 {
@@ -82,17 +86,59 @@ public function customerDashboard($user)
     return view('customer.dashboard', compact('user', 'upcomingAppointments', 'appointmentHistory','nextSunnahDate' ));
 }
 
-    private function managerDashboard($user)
-    {
-        // Any additional manager-specific logic can be added here
-        return view('manager.dashboard', compact('user'));
-    }
+private function managerDashboard($user)
+{
+    $today = Carbon::today();
 
-    private function staffDashboard($user)
-    {
-        // Any additional staff-specific logic can be added here
-        return view('staff.dashboard', compact('user'));
-    }
+    $appointmentsToday = Appointment::whereDate('date', $today)->get();
+
+    // Join with packages to get the total sales (price)
+    $totalSalesToday = DB::table('appointments')
+        ->join('packages', 'appointments.package_id', '=', 'packages.id')
+        ->whereDate('appointments.date', $today)
+        ->where('appointments.payment_status', 'paid')
+        ->sum('packages.price');
+  // Sum total sales from paid appointments for **all dates**
+  $totalSalesAllTime = DB::table('appointments')
+  ->join('packages', 'appointments.package_id', '=', 'packages.id')
+  ->where('appointments.payment_status', 'paid')
+  ->sum('packages.price');
+
+// Count total staff users
+$totalStaff = User::where('role', 'staff')->count();
+
+// Count total customer users
+$totalCustomers = User::where('role', 'customer')->count();
+$totalPackages = Package::count(); // ← new line
+
+return view('manager.dashboard', compact('appointmentsToday', 'totalSalesToday', 'totalSalesAllTime', 'totalStaff', 'totalCustomers','totalPackages'));
 }
 
+private function staffDashboard($user)
+{
+    $today = Carbon::today();
 
+    $appointmentsToday = Appointment::whereDate('date', $today)->get();
+
+    // Join with packages to get the total sales (price)
+    $totalSalesToday = DB::table('appointments')
+        ->join('packages', 'appointments.package_id', '=', 'packages.id')
+        ->whereDate('appointments.date', $today)
+        ->where('appointments.payment_status', 'paid')
+        ->sum('packages.price');
+  // Sum total sales from paid appointments for **all dates**
+  $totalSalesAllTime = DB::table('appointments')
+  ->join('packages', 'appointments.package_id', '=', 'packages.id')
+  ->where('appointments.payment_status', 'paid')
+  ->sum('packages.price');
+
+
+$totalAppointments = Appointment::count();
+
+// Count total customer users
+$totalCustomers = User::where('role', 'customer')->count();
+$totalPackages = Package::count(); // ← new line
+
+return view('staff.dashboard', compact('appointmentsToday', 'totalSalesToday', 'totalSalesAllTime','totalCustomers','totalAppointments','totalPackages'));
+}
+}

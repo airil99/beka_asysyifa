@@ -152,12 +152,6 @@
         <p>Authorized Signature</p>
     </div>
 
-    <!-- PDF Button -->
-    <div class="pdf-button-container">
-        <a href="{{ route('sales.report.pdf', ['from_date' => $fromDate, 'to_date' => $toDate]) }}" class="btn-save-pdf">
-            <i class="fa fa-save"></i> Save as PDF
-        </a>
-    </div>
 
     <!-- Footer -->
     <div class="report-footer">

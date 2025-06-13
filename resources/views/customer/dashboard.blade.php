@@ -81,14 +81,14 @@
     <div class="card contact-card tall-card">
         <h3>Contact Us</h3>
         <div class="social-links">
-            <a href="https://wa.me/60123456789" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=%2B601114210949&context=Afc1wgg6wmx7ZrtuuiMBAKPXO_fAw8mxOQ3p5xqkfwPeEfVuZX8mHuV12S9VuYVszXQxCf4MWbgx1IFI4aKebYCUkTrBQXbebxV9gPZ6AhpLXrbZKp-oXxUmxf6qZSdEYflIkhTjFo2hfrwu2dLN06RnmQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawKeSM5leHRuA2FlbQIxMABicmlkETFiWWtyZzdSR1VxQjdnVElDAR585Nm3VkyxmR2dOcSogHWxm0R1PllW4yaAyuWgCJqYmPJwJzWQU-DSEf9Zzw_aem_iDZfwuRiuR5PZlha1IMS_w" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="social-icon">
             </a>
-            <a href="https://www.facebook.com/yourpage" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=%2B601114210949&context=Afc1wgg6wmx7ZrtuuiMBAKPXO_fAw8mxOQ3p5xqkfwPeEfVuZX8mHuV12S9VuYVszXQxCf4MWbgx1IFI4aKebYCUkTrBQXbebxV9gPZ6AhpLXrbZKp-oXxUmxf6qZSdEYflIkhTjFo2hfrwu2dLN06RnmQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawKeSM5leHRuA2FlbQIxMABicmlkETFiWWtyZzdSR1VxQjdnVElDAR585Nm3VkyxmR2dOcSogHWxm0R1PllW4yaAyuWgCJqYmPJwJzWQU-DSEf9Zzw_aem_iDZfwuRiuR5PZlha1IMS_w" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
             </a>
             <!-- Instagram Icon Added -->
-            <a href="https://www.instagram.com/yourpage" target="_blank">
+            <a href="https://www.instagram.com/bekamasysyifa_puchong?igsh=MWp1OXU5aTJjenQzeQ==" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733614.png" alt="Instagram" class="social-icon">
             </a>
         </div>

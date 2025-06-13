@@ -49,14 +49,14 @@
 <style>
     /* Container Design */
     .appointment-container {
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        max-width: 700px;
-        margin: 50px auto;
-        text-align: center;
+        margin: 30px auto;
+    max-width: 900px;
+    background-color: whitesmoke; /* Baby Blue */
+    border: 2px solid #90CAF9; 
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
     }
 
     /* No Appointments Message */
