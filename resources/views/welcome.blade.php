@@ -192,6 +192,52 @@ session_start();
                 </div>
             </div>
         </div>
+
+        <!-- Therapists Start -->
+        <div class="container-xxl pt-5 pb-3" id="therapists">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Our Team</h5>
+                    <h1 class="mb-5">Meet Our Skilled Therapists</h1>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <!-- male therapist -->
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4" style="width:150px;height:150px;">
+                                <!-- force the image itself to be circular too -->
+                                <img class="img-fluid rounded-circle" src="{{ asset('pictures/man therapist.jpg') }}" alt="Male Therapist">
+                            </div>
+                            <h5 class="mb-0">Shafiq Bin Jamal</h5>
+                            <small> Male Cupping Specialist</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- female therapist -->
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4" style="width:150px;height:150px;">
+                                <img class="img-fluid rounded-circle" src="{{ asset('pictures/women theapist.jpg') }}" alt="Female Therapist">
+                            </div>
+                            <h5 class="mb-0">Nurul Waheeda</h5>
+                            <small>Female Cupping Specialist</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Therapists End -->
+
         <!-- Menu Start -->
         <div class="container-xxl py-5" id="packages">
             <div class="container">
