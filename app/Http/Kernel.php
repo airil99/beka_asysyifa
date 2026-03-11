@@ -38,7 +38,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\PreventBackHistory::class,
         ],
 
         'api' => [
@@ -55,7 +54,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-       // 'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
@@ -67,6 +66,7 @@ class Kernel extends HttpKernel
         
         // Custom Middleware for Role-Based Access
         'role' => \App\Http\Middleware\RoleMiddleware::class, // Role middleware for access control
+        'prevent-back-history' => \App\Http\Middleware\PreventBackHistory::class, // Prevent browser back after logout
     ];
 }
 

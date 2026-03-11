@@ -21,9 +21,10 @@ use App\Http\Controllers\ClientRecordController;
 use App\Http\Controllers\SalesController;
 
 // Public routes
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\WelcomeController;
+
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+
 Route::get('/all-packages', function () {
     return view('allpackages');
 })->name('all.packages');
@@ -40,11 +41,12 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showResetForm'])->name('password.request');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'reset'])->name('password.update');
 
-// Dashboard routes
-
-Route::get('/customer/dashboard', [DashboardController::class, 'index'])->name('customer.dashboard');
-Route::get('/staff/dashboard', [DashboardController::class, 'Index'])->name('staff.dashboard');
-Route::get('/manager/dashboard', [DashboardController::class, 'Index'])->name('manager.dashboard');
+// Dashboard routes (prevent back after logout)
+Route::middleware(['auth', \App\Http\Middleware\PreventBackHistory::class])->group(function () {
+    Route::get('/customer/dashboard', [DashboardController::class, 'index'])->name('customer.dashboard');
+    Route::get('/staff/dashboard', [DashboardController::class, 'Index'])->name('staff.dashboard');
+    Route::get('/manager/dashboard', [DashboardController::class, 'Index'])->name('manager.dashboard');
+});
 
 // Customer Routes
 Route::middleware(['auth'])->group(function () {
@@ -58,7 +60,7 @@ Route::prefix('customer/appointment')->group(function () {
     Route::post('/confirm', [CustomerAppointmentController::class, 'confirmBooking'])->name('customer.appointment.confirm');
 });
 
-Route::prefix('customer')->middleware('auth')->group(function () {
+Route::prefix('customer')->middleware(['auth'])->group(function () {
     Route::get('/payment', [PaymentController::class, 'index'])->name('customer.payment');
     Route::get('/payment/{id}', [PaymentController::class, 'show'])->name('customer.payment.show');
 });

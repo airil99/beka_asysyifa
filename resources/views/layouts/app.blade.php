@@ -232,7 +232,53 @@
 
                     @endif
 
-                    <li><a href="{{ route('login.form') }}" class="logout"><i class="fas fa-sign-out-alt"></i><span class="nav-item">Logout</span></a></li>
+                </ul>
+                <div class="logout-bottom">
+                    <form action="{{ route('logout') }}" method="POST" class="logout-form">
+                        @csrf
+                        <button type="submit" class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-item">Logout</span>
+                        </button>
+                    </form>
+                </div>
+                    <style>
+                        .logout-bottom {
+                            position: absolute;
+                            left: 0;
+                            bottom: 30px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                        }
+                        .logout-btn {
+                            background: transparent;
+                            color: black;
+                            border: none;
+                            padding: 10px 16px;
+                            border-radius: 6px;
+                            display: flex;
+                            align-items: center;
+                            font-size: 16px;
+                            gap: 8px;
+                            font-weight: 500;
+                            transition: all 0.3s ease;
+                            cursor: pointer;
+                        }
+                        .logout-btn:hover {
+                            background-color: #007bff;
+                            color: white;
+                            transform: scale(1.03);
+                        }
+                        .logout-btn:hover i,
+                        .logout-btn:hover .nav-item {
+                            color: white;
+                        }
+                        .logout-form {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    </style>
                 </ul>
             </div>
         </nav>

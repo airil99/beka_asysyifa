@@ -40,13 +40,20 @@ class LoginController extends Controller
         ])->withInput($request->only('email')); // Keep the email in the input
     }
 
-    // Optional: Logout method
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-    
-        return redirect('/login')->with('success', 'You have been logged out successfully.');
-    }
+   public function logout(Request $request)
+{
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect()->route('welcome');
 }
+}
+
+
+
+
+
+
+
+
